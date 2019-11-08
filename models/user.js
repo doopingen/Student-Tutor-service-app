@@ -20,16 +20,14 @@ const userSchema = new mongoose.Schema({
     required: [true, 'You must enter an email'],
     minlength: [5, 'Email must be between 5 and 99 characters'],
     maxlength: [99, 'Email must be between 5 and 99 characters']
-<<<<<<< HEAD
-  }
-=======
+
   },
+  
   username: String,
   role: String,
   bio: String,
   subjects: [],
   messages: [messageSchema]
->>>>>>> f78a257a52f77d6c8445e5f98a3f52974488b6af
 });
 
 userSchema.set('toObject', {
