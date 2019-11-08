@@ -31,11 +31,11 @@ var newUser = new User({
         if (err) return console.log(err);
   });
 
-
+app.use('/dashboard', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
-app.use('/index',
+app.use('/locked',
         expressJWT({ secret: process.env.JWT_SECRET }).unless({ method: 'POST' }),
-        require('./routes/index'));
+        require('./routes/locked'));
 
 app.listen(process.env.PORT, () => {
   console.log(`${process.env.PORT} for life!!`);

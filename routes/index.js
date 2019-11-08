@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 
 // GET all users
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
     User.find({}, (err, users) => {
         //all users
         res.json(users);
@@ -13,7 +13,7 @@ router.get('/users', (req, res) => {
 });
 
 // GET all users who are students
-router.get('/users', (req, res) => {
+router.get('/students', (req, res) => {
     User.find({ 'role': 'student' }, (err, users) => {
         res.json(users);
         console.log(`found all STUDENT users`)
@@ -21,7 +21,7 @@ router.get('/users', (req, res) => {
 });
 
 // GET all users who are tutors
-router.get('/users', (req, res) => {
+router.get('/tutors', (req, res) => {
     User.find({ 'role': 'tutor' }, (err, users) => {
         res.json(users);
         console.log(`found all TUTOR users`)
@@ -30,7 +30,7 @@ router.get('/users', (req, res) => {
 
 
 // GET one user by id whether student or tutor
-router.get('/users/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         // one user
         res.json(user);
@@ -39,7 +39,7 @@ router.get('/users/:id', (req, res) => {
 });
 
 // POST: Student has saved this tutor
-router.post('/users/:id/tutors', (req, res) => {
+router.post('students/:id/tutors', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         user.tutor.push(req.body);
         user.save((err, user) => {
@@ -50,7 +50,7 @@ router.post('/users/:id/tutors', (req, res) => {
 });
 
 // UPDATE: Student has updated their saved tutors
-router.post('/users/:uid/tutors/:tid', (req, res) => {
+router.post('/:sid/tutors/:tid', (req, res) => {
     User.findByIdAndUpdate(req.params.id, (err, user) => {
         user.tutors.id(req.params.tid).update();
         user.save((err, user) => {
@@ -61,7 +61,7 @@ router.post('/users/:uid/tutors/:tid', (req, res) => {
 
 
 // DELETE: Student has deleted one of their saved tutors
-router.delete('/users/:uid/tutors/:tid', (req, res) => {
+router.delete('/:sid/tutors/:tid', (req, res) => {
     User.findByIdAndUpdate(req.params.uid, (err, user) => {
         user.tutors.id(req.params.tid).remove();
         user.save((err, user) => {
@@ -71,7 +71,7 @@ router.delete('/users/:uid/tutors/:tid', (req, res) => {
 });
 
 // POST: a new message for user
-router.post('/users/:id/messages', (req, res) => {
+router.post('/:id/messages', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         user.message.push(req.body);
         user.save((err, user) => {
@@ -84,7 +84,7 @@ router.post('/users/:id/messages', (req, res) => {
 
 
 // UPDATE: Update an existing message for user
-router.put('/users/:uid/messages/:mid', (req, res) => {
+router.put('/:uid/messages/:mid', (req, res) => {
     User.findByIdAndUpdate(req.params.uid, (err, user) => {
         user.messages.id(req.params.mid).update();
         user.save((err, user) => {
@@ -94,7 +94,7 @@ router.put('/users/:uid/messages/:mid', (req, res) => {
 });
 
 // DELETE: Delete a message
-router.delete('/users/:uid/messages/:id', (req, res) => {
+router.delete('/:uid/messages/:id', (req, res) => {
     User.findByIdAndUpdate(req.params.uid, (err, user) => {
         user.messages.id(req.params.mid).remove();
         user.save((err, user) => {
