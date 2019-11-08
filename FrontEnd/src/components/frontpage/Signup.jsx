@@ -6,7 +6,8 @@ class Signup extends React.Component {
     name: '',
     email: '',
     password: '',
-    message: ''
+    message: '',
+    role: ''
   }
 
   handleChange = (e) => {
@@ -40,9 +41,10 @@ class Signup extends React.Component {
       <div className="Signup">
         <h3>Create a new account:</h3>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="name" onChange={this.handleChange} value={this.state.name} /><br />
-          <input type="text" name="email" onChange={this.handleChange} value={this.state.email} /><br />
-          <input type="password" name="password" onChange={this.handleChange} value={this.state.password} /><br />
+          <input type="text" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name} /><br />
+          <input type="text" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email} /><br />
+          <input type="password" name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} /><br />
+          <input type="text" name="role" placeholder="Role" onChange={this.handleChange} value={this.state.role} /><br />
           <input type="submit" value="Sign Up!" />
         </form>
       </div>
