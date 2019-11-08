@@ -5,6 +5,6 @@ const messageSchema = new mongoose.Schema ({
     recipientId: String,
     title: String,
     body: String,
-})
+});
 
-modules.export = mongoose.model('Message', messageSchema)
+module.export = mongoose.model('Message', messageSchema)
