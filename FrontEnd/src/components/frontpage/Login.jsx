@@ -34,12 +34,12 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="Login">
-        <h3>Log into your account:</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="email" onChange={this.handleChange} value={this.state.email} /><br />
-          <input type="password" name="password" onChange={this.handleChange} value={this.state.password} /><br />
-          <input type="submit" value="Log In!" />
+      <div className="row">
+        <h5>Log into your account:</h5>
+        <form className="col s12" onSubmit={this.handleSubmit}>
+          <input className="input-field col s12" type="text" placeholder="Email address" name="email" onChange={this.handleChange} value={this.state.email} /><br />
+          <input className="input-field col s12" type="password" placeholder="Password" name="password" onChange={this.handleChange} value={this.state.password} /><br />
+          <input className="input-field col s12" type="submit" value="Log In!" />
         </form>
       </div>
     )
