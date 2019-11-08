@@ -3,28 +3,105 @@ const router = express.Router();
 const User = require('../models/user');
 
 
-// get all users who are students
+// GET all users
 router.get('/users', (req, res) => {
     User.find({}, (err, users) => {
-        //all students
+        //all users
         res.json(users);
-        console.log(`successfully found ALL users`);
+        console.log(`found ALL users`);
+    });
+});
+
+// GET all users who are students
+router.get('/users', (req, res) => {
+    User.find({ 'role': 'student' }, (err, users) => {
+        res.json(users);
+        console.log(`found all STUDENT users`)
+    });
+});
+
+// GET all users who are tutors
+router.get('/users', (req, res) => {
+    User.find({ 'role': 'tutor' }, (err, users) => {
+        res.json(users);
+        console.log(`found all TUTOR users`)
     });
 });
 
 
-// get one user by id
+// GET one user by id whether student or tutor
 router.get('/users/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
-        // one student
+        // one user
         res.json(user);
         console.log(`found ONE user`);
     });
 });
 
+// POST: Student has saved this tutor
+router.post('/users/:id/tutors', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        user.tutor.push(req.body);
+        user.save((err, user) => {
+            res.json(user);
+            console.log(`user has saved a tutor`);
+        });
+    });
+});
+
+// UPDATE: Student has updated their saved tutors
+router.post('/users/:uid/tutors/:tid', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, (err, user) => {
+        user.tutors.id(req.params.tid).update();
+        user.save((err, user) => {
+            res.json(user);
+        });
+    });
+});
+
+
+// DELETE: Student has deleted one of their saved tutors
+router.delete('/users/:uid/tutors/:tid', (req, res) => {
+    User.findByIdAndUpdate(req.params.uid, (err, user) => {
+        user.tutors.id(req.params.tid).remove();
+        user.save((err, user) => {
+            res.json(user);
+        });
+    });
+});
+
+// POST: a new message for user
+router.post('/users/:id/messages', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
+        user.message.push(req.body);
+        user.save((err, user) => {
+            res.json(user);
+            console.log(`posted a new message to user model`);
+        });
+    });
+});
 
 
 
+// UPDATE: Update an existing message for user
+router.put('/users/:uid/messages/:mid', (req, res) => {
+    User.findByIdAndUpdate(req.params.uid, (err, user) => {
+        user.messages.id(req.params.mid).update();
+        user.save((err, user) => {
+            res.json(user);
+        });
+    });
+});
+
+// DELETE: Delete a message
+router.delete('/users/:uid/messages/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.uid, (err, user) => {
+        user.messages.id(req.params.mid).remove();
+        user.save((err, user) => {
+            res.json(user);
+        });
+    });
+});
 
 
 
