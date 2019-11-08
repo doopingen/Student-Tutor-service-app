@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const messageSchema = require('./message');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -23,7 +24,7 @@ const userSchema = new mongoose.Schema({
   username: String,
   role: String,
   bio: String,
-  subjects: [subjectSchema],
+  subjects: [],
   messages: [messageSchema]
 });
 

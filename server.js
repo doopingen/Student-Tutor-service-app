@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const expressJWT = require('express-jwt');
 const helmet = require('helmet');
+const User = require('./models/user');
+const SubjectData = require('./models/subject');
 
 const app = express();
 
@@ -25,5 +27,5 @@ app.use('/locked',
         require('./routes/locked'));
 
 app.listen(process.env.PORT, () => {
-  console.log(`You are listening to the sweet sounds of port ${process.env.PORT}...`);
+  console.log(`${process.env.PORT} for life!!`);
 });

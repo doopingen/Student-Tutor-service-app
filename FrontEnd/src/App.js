@@ -1,8 +1,15 @@
 import React from 'react';
 import './App.css';
-import Login from './Login';
-import Signup from './Signup';
+import Login from './components/frontpage/Login';
+import Signup from './components/frontpage/Signup';
+import FrontPageHeader from './components/frontpage/FrontPageHeader';
+import FrontPageFooter from './components/frontpage/FrontPageFooter';
 import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 class App extends React.Component {
   state = {
@@ -82,27 +89,41 @@ class App extends React.Component {
     if (this.state.user) {
       contents = (
         <>
+        <Router>
           <p>Hello, {this.state.user.name}</p>
           <button onClick={this.handleClick}>Test the protected route</button>
           <button onClick={this.logout}>LOGOUT</button><br />
           <p>{this.state.lockedResult}</p>
+        </Router>
         </>
       )
     } else {
       contents = (
         <>
-          <Signup liftToken={this.liftToken} />
+          {/* <Signup liftToken={this.liftToken} /> */}
           <Login liftToken={this.liftToken} />
         </>
       )
     }
     return (
-      <div className="App">
-        <header><h1>Welcome to my Site!</h1></header>
-        <div className="content-box">
-          {contents}
+      <Router>
+        <div class="section no-pad-bot" id="index-banner">
+          <FrontPageHeader />
+          <div class="container">
+            <div class="row center">
+                <div class="col">
+                  <h1 class="header center orange-text">Welcome!</h1>
+                  <h5 class="header col s12 light">Start your journey to a better understanding here</h5>
+                  <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Signup!</a>
+                </div>
+                <div class="col">
+                  {contents}
+                </div>
+            </div>
+          </div>
+          <FrontPageFooter />
         </div>
-      </div>
+      </Router>
     )
   }
 }
