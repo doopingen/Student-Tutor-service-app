@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Login from './components/frontpage/Login';
-import Signup from './components/frontpage/Signup';
 import FrontPageHeader from './components/frontpage/FrontPageHeader';
 import FrontPageFooter from './components/frontpage/FrontPageFooter';
+import Modal from './components/frontpage/modal';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -114,7 +114,7 @@ class App extends React.Component {
                 <div class="col">
                   <h1 class="header center orange-text">Welcome!</h1>
                   <h5 class="header col s12 light">Start your journey to a better understanding here</h5>
-                  <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Signup!</a>
+                  <Modal />
                 </div>
                 <div class="col">
                   {contents}

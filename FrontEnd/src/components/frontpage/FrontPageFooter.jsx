@@ -45,7 +45,7 @@ const frontPageFooter = () => {
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    <p>Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Team Awesome</a></p>
+                    <p>Made by <a class="orange-text text-lighten-3" href="#">Team Awesome</a></p>
                 </div>
             </div>
         </footer>
