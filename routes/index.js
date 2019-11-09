@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     User.find({}, (err, users) => {
         //all users
         res.json(users);
-        console.log(`found ALL users`);
+        console.log(`found ALL users1!`);
     });
 });
 
