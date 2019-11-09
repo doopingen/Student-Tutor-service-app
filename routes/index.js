@@ -38,10 +38,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST: Student has saved this tutor
+// POST: Student saved tutor to their dashboard
 router.post('students/:id/tutors', (req, res) => {
     User.findById(req.params.id, (err, user) => {
-        user.tutor.push(req.body);
+        user.tutors.push(req.body);
         user.save((err, user) => {
             res.json(user);
             console.log(`user has saved a tutor`);
@@ -49,7 +49,7 @@ router.post('students/:id/tutors', (req, res) => {
     });
 });
 
-// UPDATE: Student has updated their saved tutors
+// UPDATE: Student updated their saved tutors
 router.post('/:sid/tutors/:tid', (req, res) => {
     User.findByIdAndUpdate(req.params.id, (err, user) => {
         user.tutors.id(req.params.tid).update();
@@ -60,9 +60,9 @@ router.post('/:sid/tutors/:tid', (req, res) => {
 });
 
 
-// DELETE: Student has deleted one of their saved tutors
+// DELETE: Student deleted one of their saved tutors
 router.delete('/:sid/tutors/:tid', (req, res) => {
-    User.findByIdAndUpdate(req.params.uid, (err, user) => {
+    User.findByIdAndDelete(req.params.uid, (err, user) => {
         user.tutors.id(req.params.tid).remove();
         user.save((err, user) => {
             res.json(user);
@@ -70,10 +70,10 @@ router.delete('/:sid/tutors/:tid', (req, res) => {
     });
 });
 
-// POST: a new message for user
+// POST: a new message for any user
 router.post('/:id/messages', (req, res) => {
     User.findById(req.params.id, (err, user) => {
-        user.message.push(req.body);
+        user.messages.push(req.body);
         user.save((err, user) => {
             res.json(user);
             console.log(`posted a new message to user model`);
@@ -83,20 +83,10 @@ router.post('/:id/messages', (req, res) => {
 
 
 
-// UPDATE: Update an existing message for user
-router.put('/:uid/messages/:mid', (req, res) => {
-    User.findByIdAndUpdate(req.params.uid, (err, user) => {
-        user.messages.id(req.params.mid).update();
-        user.save((err, user) => {
-            res.json(user);
-        });
-    });
-});
-
-// DELETE: Delete a message
-router.delete('/:uid/messages/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.uid, (err, user) => {
-        user.messages.id(req.params.mid).remove();
+// DELETE: Delete a message for any user
+router.delete('/messages/:id', (req, res) => {
+    User.findByIdAndDelete(req.params.id, (err, user) => {
+        user.messages.title(req.body).remove();
         user.save((err, user) => {
             res.json(user);
         });

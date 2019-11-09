@@ -27,7 +27,8 @@ const userSchema = new mongoose.Schema({
   role: String,
   bio: String,
   subjects: [],
-  messages: [messageSchema]
+  messages: [messageSchema],
+  tutors: []
 });
 
 userSchema.set('toObject', {
