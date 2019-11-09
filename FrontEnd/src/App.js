@@ -6,6 +6,7 @@ import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
+  Redirect,
   Link
 } from 'react-router-dom';
 
@@ -86,7 +87,10 @@ class App extends React.Component {
     let contents;
     if (this.state.user) {
       contents = (
+        <>
+        <Redirect to='/dashboard'/>
         <Route path='/dashboard' render={(props) => <Dashboard {...props} lockedResult={this.state.lockedResult} handleClick={this.handleClick} logout={this.logout}/>}/>
+        </>
       )
     } else {
       contents = (

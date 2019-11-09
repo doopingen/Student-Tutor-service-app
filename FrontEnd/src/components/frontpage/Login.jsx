@@ -25,8 +25,7 @@ class Login extends React.Component {
         console.log("ERROR:", response.data.message)
       } else {
         localStorage.setItem('mernToken', response.data.token);
-        this.props.liftToken(response.data);
-        return <Redirect to='/dashboard' />
+        this.props.liftToken(response.data)
       }
     }).catch( err => {
       // Rate limiter catch block
