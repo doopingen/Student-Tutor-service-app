@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 class Login extends React.Component {
   state = {
@@ -23,8 +24,9 @@ class Login extends React.Component {
       if (response.data.type === 'error') {
         console.log("ERROR:", response.data.message)
       } else {
-        localStorage.setItem('mernToken', response.data.token)
-        this.props.liftToken(response.data)
+        localStorage.setItem('mernToken', response.data.token);
+        this.props.liftToken(response.data);
+        return <Redirect to='/dashboard' />
       }
     }).catch( err => {
       // Rate limiter catch block
