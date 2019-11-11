@@ -4,6 +4,7 @@ import DashboardHeader from './DashboardHeader'
 import DashboardMain from './DashboardMain'
 import Subjects from './Subjects'
 import Avatar from 'react-avatar';
+import EditProfile from './EditProfile';
 import {
   BrowserRouter as Router,
   Route,
@@ -46,6 +47,7 @@ class Dashboard extends React.Component {
           <DashboardHeader />
           <Route path='/dashboard/main' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
           <Route path='/dashboard/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData}/>}/>
+          <Route path='/editprofile' component={EditProfile} />
         </Router>
       </>
     )
