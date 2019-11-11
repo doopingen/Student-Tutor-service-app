@@ -21,7 +21,6 @@ class Dashboard extends React.Component {
   }
 
   handleLevelOnClick = (e) => {
-    e.preventDefault();
     this.setState({
         level: e.target.name
     })
