@@ -21,7 +21,8 @@ class Signup extends React.Component {
     axios.post('/auth/signup', {
       name: this.state.name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      role: this.state.role
     }).then( response => {
       if (response.data.type === 'error') {
         console.log("ERROR:", response.data.message)

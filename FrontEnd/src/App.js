@@ -89,7 +89,7 @@ class App extends React.Component {
       contents = (
         <>
         <Redirect to='/dashboard'/>
-        <Route path='/dashboard' render={(props) => <Dashboard {...props} lockedResult={this.state.lockedResult} handleClick={this.handleClick} logout={this.logout}/>}/>
+        <Route path='/dashboard' render={(props) => <Dashboard {...props} user={this.state.user} lockedResult={this.state.lockedResult} handleClick={this.handleClick} logout={this.logout}/>}/>
         </>
       )
     } else {

@@ -1,22 +1,25 @@
-.App {
-  text-align: center;
+.sidenav-style {
+  width:200px;
+  background-color: #e1e1e1;
 }
 
-.App-logo {
-  height: 40vmin;
+.sidebar-active {
+  padding-left:200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dashboard-bkgrd {
+  background-color: #fff;
 }
 
-.App-link {
-  color: #09d3ac;
+.sidenav li > a {
+  background-color: #e1e1e1;
+}
+
+.topnav-style {
+  background-color: #f1f1f1
+}
+
+.sidenav-heading {
+  padding-top:10px;
+  padding-bottom:10px
 }
