@@ -21,154 +21,132 @@ db.on('error', (err) => {
   console.log(`Database error:\n${err}`);
 });
 
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Math",
-  subject: "Algebra"
-});
+var newSubjects = [
+  {
+    schoolLevel: "Highschool",
+    category: "Math",
+    subject: "Algebra"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Math",
+    subject: "Geometry"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Math",
+    subject: "Algebra II/ Trigonometry"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Math",
+    subject: "Pre-Calculus"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Language Arts",
+    subject: "English I"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Language Arts",
+    subject: "English II"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Language Arts",
+    subject: "English III"
+  },
+  {
+    schoolLevel: "Highschool",
+    category: "Language Arts",
+    subject: "English IV"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Math",
+    subject: "Whole Numbers"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Math",
+    subject: "Fractions and Mixed Numbers"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Math",
+    subject: "Decimals, Percents, Ratios"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Math",
+    subject: "Solving Equations and Inequalities"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Language Arts",
+    subject: "Grammer and Mechanics"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Language Arts",
+    subject: "Reading Comprehension"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Language Arts",
+    subject: "Writing"
+  },
+  {
+    schoolLevel: "Middleschool",
+    category: "Language Arts",
+    subject: "Vocabulary"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "Math",
+    subject: "Addition"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "Math",
+    subject: "Subtraction"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "Math",
+    subject: "Multiplication"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "Math",
+    subject: "Division"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "English",
+    subject: "Reading"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "English",
+    subject: "Writing"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "English",
+    subject: "Vocabulary"
+  },
+  {
+    schoolLevel: "Elementaryschool",
+    category: "English",
+    subject: "Communicaton"
+  }
+];
 
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Math",
-  subject: "Geometry"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Math",
-  subject: "Algebra II/ Trigonometry"
-})
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Math",
-  subject: "Pre-Calculus"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Language Arts",
-  subject: "English I"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Language Arts",
-  subject: "English II"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Language Arts",
-  subject: "English III"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Highschool",
-  category: "Language Arts",
-  subject: "English IV"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Math",
-  subject: "Whole Numbers"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Math",
-  subject: "Fractions and Mixed Numbers"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Math",
-  subject: "Decimals, Percents, Ratios"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Math",
-  subject: "Solving Equations and Inequalities"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Language Arts",
-  subject: "Grammer and Mechanics"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "middleschool",
-  category: "Language Arts",
-  subject: "Reading Comprehension"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Language Arts",
-  subject: "Writing"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Middleschool",
-  category: "Language Arts",
-  subject: "Vocabulary"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "Math",
-  subject: "Addition"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "Math",
-  subject: "Subtraction"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "Math",
-  subject: "Multiplication"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "Math",
-  subject: "Division"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "English",
-  subject: "Reading"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "English",
-  subject: "Writing"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "English",
-  subject: "Vocabulary"
-});
-
-var newSubject = new Subject({
-  schoolLevel: "Elementryschool",
-  category: "English",
-  subject: "Communicaton"
-});
-
-
-newSubject.save((err) => {
+Subject.collection.insert(newSubjects, function (err, docs) {
   if (err) return console.log(err);
-  console.log("Subject Created!")
+  console.log("Subjects Created!")
 })
 
 app.use('/dashboard', require('./routes/index'));
