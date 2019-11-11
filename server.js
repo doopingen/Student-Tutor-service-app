@@ -21,16 +21,6 @@ db.on('error', (err) => {
   console.log(`Database error:\n${err}`);
 });
 
-var newUser = new User({
-      name: 'JH',
-      password: 'password',
-      email: 'josh@josh.com',
-      role: 'tutor',
-  });
-  newUser.save(function(err) {
-        if (err) return console.log(err);
-  });
-
 app.use('/dashboard', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 app.use('/locked',

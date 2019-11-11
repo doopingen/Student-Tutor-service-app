@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Login from './components/frontpage/Login';
-import FrontPageHeader from './components/frontpage/FrontPageHeader';
-import FrontPageFooter from './components/frontpage/FrontPageFooter';
-import Modal from './components/frontpage/modal';
+import Dashboard from './components/dashboard/Dashboard';
+import FrontPage from './components/frontpage/FrontPage';
 import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
+  Redirect,
   Link
 } from 'react-router-dom';
 
@@ -89,41 +88,21 @@ class App extends React.Component {
     if (this.state.user) {
       contents = (
         <>
-        <Router>
-          <p>Hello, {this.state.user.name}</p>
-          <button onClick={this.handleClick}>Test the protected route</button>
-          <button onClick={this.logout}>LOGOUT</button><br />
-          <p>{this.state.lockedResult}</p>
-        </Router>
+        <Redirect to='/dashboard'/>
+        <Route path='/dashboard' render={(props) => <Dashboard {...props} user={this.state.user} lockedResult={this.state.lockedResult} handleClick={this.handleClick} logout={this.logout}/>}/>
         </>
       )
     } else {
       contents = (
-        <>
-          {/* <Signup liftToken={this.liftToken} /> */}
-          <Login liftToken={this.liftToken} />
-        </>
+        <FrontPage liftToken={this.liftToken} />
       )
     }
     return (
+      <>
       <Router>
-        <div class="section no-pad-bot" id="index-banner">
-          <FrontPageHeader />
-          <div class="container">
-            <div class="row center">
-                <div class="col">
-                  <h1 class="header center orange-text">Welcome!</h1>
-                  <h5 class="header col s12 light">Start your journey to a better understanding here</h5>
-                  <Modal />
-                </div>
-                <div class="col">
-                  {contents}
-                </div>
-            </div>
-          </div>
-          <FrontPageFooter />
-        </div>
+        {contents}
       </Router>
+      </>
     )
   }
 }

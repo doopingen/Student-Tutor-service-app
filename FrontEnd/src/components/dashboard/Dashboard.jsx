@@ -1,50 +1,54 @@
 import React from 'react';
 import axios from 'axios';
-import Avatar from 'react-avatar';
+import DashboardHeader from './DashboardHeader'
+import DashboardMain from './DashboardMain'
+import Subjects from './Subjects'
+import Avatar from 'react-avatar';import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Link
+} from 'react-router-dom';
 
 class Dashboard extends React.Component {
+
+  state = {
+    loggedInUser: this.props.user,
+    userData: [],
+    tutor: null,
+    level: '',
+  }
+
+  handleLevelOnClick = (e) => {
+    e.preventDefault();
+    this.setState({
+        level: e.target.name
+    });
+    // return <Redirect to='/subjects'/>
+  }
+
+  grabUserData = () => {
+    axios.get(`/dashboard/${this.state.loggedInUser._id}`)
+    .then( response => {
+      this.setState({
+        userData: response.data
+      })
+    })
+  }
+  
+  componentDidMount = () => {
+    this.grabUserData()
+  }
+
   render() {
     return (
-      <div class="container">
-        <div class="row-1">
-          <div class="col-1-2">
-            {/* this will be the avatar div */}
-            <Avatar src={user.img} size="100" round={true} />
-            <h1 class="welcome-row">Welcome {user.name} to Stutor! </h1>
-          </div>
-          <div class="col-1-2">
-            {/* this will be the Pick a School Level div*/}
-            <h3 class="school-row">Pick a School Level</h3>
-            <form class="button-row">
-              <input type="submit" value="Elementryschool" />
-              <input type="submit" value="Middleschool" />
-              <input type="submit" value="Highschool" />
-            </form>
-          </div>
-        </div>
-        <div class="row-2">
-          <div class="col-1">
-            {/* this is the My Tutor div */}
-            <h3 class="tutor-title">My Tutors</h3>
-            <div>
-              <Avatar src={tutor.img} size="25" round={true} />
-              <p class="tutor-row">{mappedTutor.name}</p>
-              <form>
-                <input type="submit" value="Message!" />
-                <input type="submit" value="Delete" />
-              </form>
-            </div>
-          </div>
-          <div class="col-2">
-            {/* this is the Meassage component div */}
-            <h3 class="message-title">Messages</h3>
-            <p class="message-row">{mappedMessage.info}</p>
-            <form class="message-button">
-              <input type="submit" value="Message" />
-            </form>
-          </div>
-        </div>
-      </div>
+      <>
+        <Router>
+          <DashboardHeader />
+          <Route path='/dashboard' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
+          <Route path='/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData}/>}/>
+        </Router>
+      </>
     )
   }
 }

@@ -5,7 +5,7 @@ import Signup from './Signup';
 const trigger = <Button>Signup</Button>;
 
 export default () => (
-  <Modal header="Modal Header" trigger={trigger}>
+  <Modal header="Signup for a new account here!" trigger={trigger}>
     <Signup />
   </Modal>
 );
