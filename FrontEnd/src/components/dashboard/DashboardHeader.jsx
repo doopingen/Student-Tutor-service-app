@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const dashboardHeader = (props) => {
     
@@ -19,7 +20,8 @@ const dashboardHeader = (props) => {
                                     <a href="#" className="waves-effect active">Dashboard<i className="material-icons">web</i></a>
                                 </li>
                                 <li>
-                                    <a href="#" className="waves-effect">Edit Profile<i className="material-icons">list</i></a>
+                                    <Link to={'/EditProfile'} className="waves-effect">Edit Profile</Link>.
+                                    {/* <a href="#" className="waves-effect">Edit Profile<i className="material-icons">list</i></a> */}
                                 </li>
                             </ul>
                         </div>
