@@ -20,9 +20,9 @@ class DashboardMain extends React.Component {
                 <div className="row">
                     {/* this will be the Pick a School Level div*/}
                     <h3 className="school-row">Pick a School Level</h3>
-                   <Link to="/dashboard/pickasubject" name="Test1" onClick={this.props.levelAdd}>Add1</Link>
-                    <button name='Test2' onClick={this.props.levelAdd}>Add2</button>
-                    <button name='Test3' onClick={this.props.levelAdd}>Add3</button>
+                    <Link to="/dashboard/pickasubject" name="Highschool" onClick={this.props.levelAdd}>Highschool</Link>{' | '}
+                    <Link to="/dashboard/pickasubject" name="Middleschool" onClick={this.props.levelAdd}>Middleschool</Link>{' | '}
+                    <Link to="/dashboard/pickasubject" name="Elementaryschool" onClick={this.props.levelAdd}>Elementaryschool</Link>
                 </div>
                 <div className="row">
                     <div className="col s6">
