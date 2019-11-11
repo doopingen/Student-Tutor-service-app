@@ -3,7 +3,8 @@ import axios from 'axios';
 import DashboardHeader from './DashboardHeader'
 import DashboardMain from './DashboardMain'
 import Subjects from './Subjects'
-import Avatar from 'react-avatar';import {
+import Avatar from 'react-avatar';
+import {
   BrowserRouter as Router,
   Route,
   Redirect,
@@ -23,8 +24,7 @@ class Dashboard extends React.Component {
     e.preventDefault();
     this.setState({
         level: e.target.name
-    });
-    // return <Redirect to='/subjects'/>
+    })
   }
 
   grabUserData = () => {
@@ -45,8 +45,8 @@ class Dashboard extends React.Component {
       <>
         <Router>
           <DashboardHeader />
-          <Route path='/dashboard' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
-          <Route path='/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData}/>}/>
+          <Route path='/dashboard/main' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
+          <Route path='/dashboard/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData}/>}/>
         </Router>
       </>
     )

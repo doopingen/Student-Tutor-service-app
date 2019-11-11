@@ -144,10 +144,10 @@ var newSubjects = [
   }
 ];
 
-Subject.collection.insert(newSubjects, function (err, docs) {
-  if (err) return console.log(err);
-  console.log("Subjects Created!")
-})
+// Subject.collection.insert(newSubjects, function (err, docs) {
+//   if (err) return console.log(err);
+//   console.log("Subjects Created!")
+// })
 
 app.use('/dashboard', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));

@@ -8,7 +8,7 @@ class Subjects extends React.Component {
   }
 
   grabSubjectData = () => {
-    axios.get(`/dashboard/${this.state.loggedInUser._id}`)
+    axios.get('/dashboard/subjects')
     .then( response => {
       this.setState({
         subjects: response.data
@@ -24,8 +24,10 @@ class Subjects extends React.Component {
     let mappedSubjects = this.state.subjects.map((subject, id )=> {
       return (
           <li key={id}>
-              <span>{subject.name}</span>
-              <button id={id} name={subject.name}>Add</button>
+              <span>{subject.schoolLevel}</span>
+              <span>{subject.subject}</span>
+              <span>{subject.category}</span>
+              <button id={id} name={subject.subject}>Add</button>
           </li>
       )
     })
