@@ -223,6 +223,7 @@ var newSubjects = [
     subject: "Communicaton"
   }
 ];
+
 // Subject.collection.insert(newSubjects, function (err, docs) {
 //   if (err) return console.log(err);
 //   console.log(newSubjects, "Subjects Created!")

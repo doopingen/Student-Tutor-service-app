@@ -88,7 +88,7 @@ class App extends React.Component {
     if (this.state.user) {
       contents = (
         <>
-        <Redirect to='/dashboard'/>
+        <Redirect to='/dashboard/main'/>
         <Route path='/dashboard' render={(props) => <Dashboard {...props} user={this.state.user} lockedResult={this.state.lockedResult} handleClick={this.handleClick} logout={this.logout}/>}/>
         </>
       )

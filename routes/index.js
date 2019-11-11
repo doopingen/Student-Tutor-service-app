@@ -1,14 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const Subject = require('../models/subject');
 
+
+// GET all subjects
+router.get('/subjects', (req, res) => {
+    Subject.find({}, (err, subjects) => {
+        res.json(subjects);
+        console.log(`Found ALL subjects!1!`);
+    });
+});
 
 // GET all users
 router.get('/', (req, res) => {
     User.find({}, (err, users) => {
         //all users
         res.json(users);
-        console.log(`found ALL users1!`);
+        console.log(`Found ALL users!1!`);
     });
 });
 
