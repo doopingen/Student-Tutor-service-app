@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
     level: '',
   }
 
-  handleLevelOnClick = () => {
+  handleLevelOnClick = (e) => {
     this.setState({
         level: e.target.name
     })
