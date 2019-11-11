@@ -24,9 +24,9 @@ class Subjects extends React.Component {
     let mappedSubjects = this.state.subjects.map((subject, id )=> {
       return (
           <li key={id}>
-              <span>{subject.schoolLevel}</span>
-              <span>{subject.subject}</span>
-              <span>{subject.category}</span>
+              <span>{subject.schoolLevel}</span>{' | '}
+              <span>{subject.category}</span>{' | '}
+              <span>{subject.subject}</span>{'  |  '}
               <button id={id} name={subject.subject}>Add</button>
           </li>
       )
