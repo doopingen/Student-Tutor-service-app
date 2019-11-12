@@ -37,8 +37,6 @@ router.get('/tutors', (req, res) => {
     });
 });
 
-
-
 // GET one user by id whether student or tutor
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
@@ -48,14 +46,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// UPDATE one user by id
+// PUT: Update User profile
 router.put('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, (err, user) => {
-        user.update((err, user) => {
-            res.json(user);
-            console.log(`user has updated their profile`);
-        });
-    });
+   User.findById(req.params.id, (err, user) => {
+       user.update(req.body, (err, user) => {
+           res.json(user);
+           console.log('User has been updated')
+       });
+   });
 });
 
 // POST: Student saved tutor to their dashboard
@@ -79,7 +77,6 @@ router.post('/:sid/tutors/:tid', (req, res) => {
     });
 });
 
-
 // DELETE: Student deleted one of their saved tutors
 router.delete('/:sid/tutors/:tid', (req, res) => {
     User.findByIdAndDelete(req.params.uid, (err, user) => {
@@ -91,7 +88,7 @@ router.delete('/:sid/tutors/:tid', (req, res) => {
 });
 
 // POST: a new message for any user
-router.post('/:id/messages', (req, res) => {
+router.post('/messages/:id/', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         user.messages.push(req.body);
         user.save((err, user) => {
@@ -101,10 +98,8 @@ router.post('/:id/messages', (req, res) => {
     });
 });
 
-
-
 // DELETE: Delete a message for any user
-router.delete('/messages/:id', (req, res) => {
+router.delete('/messages/delete/:id', (req, res) => {
     User.findByIdAndDelete(req.params.id, (err, user) => {
         user.messages.title(req.body).remove();
         user.save((err, user) => {

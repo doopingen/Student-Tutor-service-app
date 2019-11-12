@@ -224,6 +224,19 @@ var newSubjects = [
   }
 ];
 
+// var newTutor = new User({
+//   name: 'Steve',
+//   email: 'steve@ga.co',
+//   password: 'password',
+//   role: 'tutor',
+//   bio: 'Vegan yr master cleanse ennui, ramps man bun messenger bag art party four dollar toast pickled taxidermy DIY narwhal mixtape jianbing. Mlkshk letterpress helvetica adaptogen flexitarian VHS marfa chambray paleo organic pok pok gastropub offal.',
+//   subject: 'Language Arts',
+// });
+
+// newTutor.save(function(err) {
+//   if (err) return console.log(err)
+// });
+
 // Subject.collection.insert(newSubjects, function (err, docs) {
 //   if (err) return console.log(err);
 //   console.log(newSubjects, "Subjects Created!")

@@ -2,34 +2,34 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Subjects extends React.Component {
+class Tutors extends React.Component {
 
   state = {
-    subjects: [],
+    tutors: [],
   }
 
-  grabSubjectData = () => {
-    axios.get('/dashboard/subjects')
+  grabTutorData = () => {
+    axios.get('/dashboard/tutors')
     .then( response => {
       this.setState({
-        subjects: response.data
+        tutors: response.data
       })
     })
   }
   
   componentDidMount = () => {
-    this.grabSubjectData()
+    this.grabTutorData()
   }
 
   render() {
-    let mappedSubjects = this.state.subjects.map((subject, id )=> {
-      if (this.props.level === subject.schoolLevel) {
+    let mappedTutors = this.state.tutors.map((tutor, id )=> {
+      if (this.props.subject === tutor.subject) {
         return (
             <li key={id}>
-                <span>{subject.schoolLevel}</span>{' | '}
-                <span>{subject.category}</span>{' | '}
-                <span>{subject.subject}</span>{'  |  '}
-                <Link id={id} to="/dashboard/pickatutor" name={subject.category} onClick={this.props.handleSubjectOnClick}>Add</Link>
+                <h3>{tutor.name}</h3>
+                <h5>{tutor.subject}</h5>
+                <h5>{tutor.bio}</h5>
+                <Link id={id} to="/dashboard/message" id={tutor._id} name={tutor.name} onClick={this.props.handleTutorOnClick}>Message!</Link>
             </li>
         )}
     })
@@ -39,6 +39,7 @@ class Subjects extends React.Component {
           <div className="col s6">
             <h3>My Level</h3>
             <h5>{this.props.level}</h5>
+            <h5>{this.props.subject}</h5>
           </div>
           <div className="col s6">
             <h3>My Info</h3>
@@ -48,7 +49,7 @@ class Subjects extends React.Component {
         </div>
         <div className="row">
           <ul>
-            {mappedSubjects}
+            {mappedTutors}
           </ul>
         </div>
       </div>
@@ -57,4 +58,4 @@ class Subjects extends React.Component {
   }
 }
 
-export default Subjects;
+export default Tutors;
