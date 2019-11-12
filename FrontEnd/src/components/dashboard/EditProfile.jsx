@@ -1,14 +1,40 @@
 import React from 'react';
 import axios from 'axios';
+import Redirect from 'react-router-dom';
 
 class EditProfile extends React.Component {
     state = {
+        isLoggedIn: this.props.user,
         name: '',
         email: '',
         password: '',
         bio: '',
-        pic: ''
+        pic: '',
+        updatedData: []
     }
+
+    //in order to edit a specific user profile, first we must get the user's data.
+    //at load of page, use componentDidMount() to load current user's data immediately.
+    componentDidMount = () => {
+        //axios call to server for logged in user's id. since it is initialized in state,
+        //call it from state
+        axios.get(`/editprofile/${this.state.isLoggedIn}`)
+        .then(response => {
+            console.log(`current user`)
+            this.setState({
+                name: response.data.name,
+                email: response.data.email,
+                password: response.data.password,
+                bio: response.data.bio,
+                pic: response.data.pic,
+                updatedData: response.data
+            })
+        })
+    }
+
+    // componentDidMount = () => {
+    //     this.updateUserData()
+    // }
 
     handleChange = (e) => {
         this.setState({
