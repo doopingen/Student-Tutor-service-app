@@ -37,7 +37,6 @@ router.get('/tutors', (req, res) => {
     });
 });
 
-
 // GET one user by id whether student or tutor
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
@@ -68,7 +67,6 @@ router.post('/:sid/tutors/:tid', (req, res) => {
     });
 });
 
-
 // DELETE: Student deleted one of their saved tutors
 router.delete('/:sid/tutors/:tid', (req, res) => {
     User.findByIdAndDelete(req.params.uid, (err, user) => {
@@ -80,7 +78,7 @@ router.delete('/:sid/tutors/:tid', (req, res) => {
 });
 
 // POST: a new message for any user
-router.post('/:id/messages', (req, res) => {
+router.post('/messages/:id/', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         user.messages.push(req.body);
         user.save((err, user) => {
@@ -90,10 +88,8 @@ router.post('/:id/messages', (req, res) => {
     });
 });
 
-
-
 // DELETE: Delete a message for any user
-router.delete('/messages/:id', (req, res) => {
+router.delete('/messages/delete/:id', (req, res) => {
     User.findByIdAndDelete(req.params.id, (err, user) => {
         user.messages.title(req.body).remove();
         user.save((err, user) => {
