@@ -38,12 +38,23 @@ router.get('/tutors', (req, res) => {
 });
 
 
+
 // GET one user by id whether student or tutor
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, (err, user) => {
         // one user
         res.json(user);
         console.log(`found ONE user`);
+    });
+});
+
+// UPDATE one user by id
+router.put('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, (err, user) => {
+        user.update((err, user) => {
+            res.json(user);
+            console.log(`user has updated their profile`);
+        });
     });
 });
 

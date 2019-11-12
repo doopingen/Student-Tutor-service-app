@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
           <DashboardHeader />
           <Route path='/dashboard/main' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
           <Route path='/dashboard/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData}/>}/>
-          <Route path='/editprofile' component={EditProfile} />
+          <Route path='/editprofile' render={(props) => <EditProfile {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/> />
         </Router>
       </>
     )
