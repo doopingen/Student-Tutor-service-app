@@ -48,11 +48,11 @@ router.get('/:id', (req, res) => {
 
 // PUT: Update User profile
 router.put('/:id', (req, res) => {
-   User.findById(req.params.id, (err, user) => {
-       user.update(req.body, (err, user) => {
-           res.json(user);
-           console.log('User has been updated')
-       });
+User.findById(req.params.id, (err, user) => {
+    user.update(req.body, (err, user) => {
+        res.json(user);
+        console.log('User has been updated')
+    });
    });
 });
 
