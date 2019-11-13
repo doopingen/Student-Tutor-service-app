@@ -17,11 +17,10 @@ const dashboardHeader = (props) => {
                         <div className="collapsible-body" style={{display:"block"}}>
                             <ul>
                                 <li>
-                                    <a href="#" className="waves-effect active">Dashboard<i className="material-icons">web</i></a>
+                                    <Link to={'/dashboard/main'} className="waves-effect active">Dashboard<i className="material-icons">web</i></Link>
                                 </li>
                                 <li>
-                                    <Link to={'/EditProfile'} className="waves-effect">Edit Profile</Link>.
-                                    {/* <a href="#" className="waves-effect">Edit Profile<i className="material-icons">list</i></a> */}
+                                    <Link to={'/EditProfile'} className="waves-effect active">Edit Profile<i className="material-icons">account_circle</i></Link>
                                 </li>
                             </ul>
                         </div>
