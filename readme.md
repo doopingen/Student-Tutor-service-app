@@ -96,13 +96,15 @@ const tutorSchema = new mongoose.Schema ({
 #### Day 1
 We began brainstorming as a group and initially voted on hardcoding a quiz that the user takes and then posts as a result to them and their tutor.  Our plans evolved from that original thought into a student/tutor login with subject match and messaging capability. This took some recalculating and rerendering of wireframes, but ultimately led to a better, more thorough start to finish user story.
 
-### Day 2
+#### Day 2
 We built the model schemas and ensured that data was flowing from databases to postman. Rendering content onto pages.
 
-### Day 3
+#### Day 3
 We began work on the edit profile page, continued work on messaging capability, refactored subject rendering, and reflected all subjects onto user's pages.
 
-### Day 4
+#### Day 4
+MVP has been reached. A user can log in, view their dashboard, select their subject, the tutor is filtered to that subject category, messaging works both ways, and the user can edit their profile with a bio description.
+As a group, we have a few more challenges to tackle. 1. Provide the student within their dashboard the ability to save or delete the tutor with that subject category and provide a Link to each tutor profile. 2. Display message thread onto their dashboard. 3. Incorporate Cloudinary for profile pic uploads. As we wrap up those few remaining checklists, we will begin testing, and get feedback from perspective users so we can implement suggestions before deployment Friday morning. 
 
 
 
