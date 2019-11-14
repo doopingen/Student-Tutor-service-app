@@ -56,6 +56,9 @@ render() {
                         <input type="submit" value="Delete" />
                     </form>
                 </td>
+                <td>
+                    <Link id={id} to="/dashboard/message" id={message.recipientId} name={message.senderName} onClick={this.props.handleTutorOnClick}>Reply</Link>
+                </td>    
             </tr>
         )
     })
@@ -88,6 +91,7 @@ render() {
                                     <th>Recipient</th>
                                     <th>Title</th>
                                     <th>Body</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>

@@ -226,9 +226,9 @@ var newSubjects = [
 
 var newTutors = [
   {
-    name: 'Steve Peters',
-  email: 'steve@ga.co',
-  password: 'password',
+  id: '5dcdc143532a5e2a465f625a',
+  name: 'Derp Derpington',
+  email: 'derp@ga.co',
   role: 'tutor',
   rating: '5',
   bio: 'My names Steve, I’ve been tutoring for close to 15 years,  helping students gain a better understanding of Language Arts. From writing conventions to essay preparation, I enjoy teaching it all, so message me if your looking for help!',
@@ -281,12 +281,10 @@ var newTutors = [
   }
 ];
 
-
-
-// User.collection.insert(newTutors, function (err, docs) {
-//   if (err) return console.log(err);
-//   console.log(newTutors, 'Tutors Created!');
-// });
+User.collection.insert(newTutors, function (err, docs) {
+  if (err) return console.log(err);
+  console.log(newTutors, 'Tutors Created!');
+});
 
 // Subject.collection.insert(newSubjects, function (err, docs) {
 //   if (err) return console.log(err);
