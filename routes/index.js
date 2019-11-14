@@ -98,16 +98,36 @@ router.post('/messages/:id/', (req, res) => {
     });
 });
 
-// DELETE: Delete a message for any user
-router.delete('/messages/delete/:id', (req, res) => {
-    User.findByIdAndDelete(req.params.id, (err, user) => {
-        user.messages.title(req.body).remove();
-        user.save((err, user) => {
-            res.json(user);
+router.post('/messages/update/:id', (req,res) => {
+    User.findByIdAndUpdate(req.params.id,
+        {$push : 
+            {messages : req.body}
+        }, {upsert: true}, function(err, user){
+        res.json(user);
+        console.log(user);
         });
-    });
 });
 
-
+router.delete('/messages/delete/:id', (req,res) => {
+    console.log(req.body);
+    // User.findByIdAndUpdate(req.params.id,
+    //     {$pull : 
+    //         {messages : { title: req.body.title}}
+    //     }, function(err, user){
+    //     res.json(user);
+    //     console.log(req.body);
+    //     });
+});
+ 
+// // POST: a new message for any user
+// router.delete('/messages/delete/', (req, res) => {
+//     User.findByIdAndDelete({_id: req.body.id}).then( response => {
+//             res.json(response)
+//         })
+//         .catch( err => {
+//             // This block catches rate limited errors
+//             console.log(err)
+//         })
+// }) 
 
 module.exports = router;
