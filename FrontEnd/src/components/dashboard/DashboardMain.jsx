@@ -33,6 +33,7 @@ class DashboardMain extends React.Component {
                                 <input type="submit" value="Message!" />
                                 <input type="submit" value="Delete" />
                             </form>
+                            <Link to="/dashboard/map" name="map">Map</Link>
                         </div>
                     </div>
                     <div className="col s6">
@@ -44,6 +45,7 @@ class DashboardMain extends React.Component {
                             <input type="submit" value="Message" />
                         </form>
                     </div>
+                    
                 </div>
             </div>
         )
