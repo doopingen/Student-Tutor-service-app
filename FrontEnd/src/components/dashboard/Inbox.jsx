@@ -4,35 +4,43 @@ import { Link } from 'react-router-dom';
 
 class userInbox extends React.Component {
 
-state = {
-    messageData: [],
-}
+  state = {
+      loggedInUserData: [],
+      messageData: []
+  }
 
-pushInState = () => {
-    this.setState({
-        messageData: this.props.userData.messages
+  grabUserData = () => {
+    axios.get(`/dashboard/${this.props.userData._id}`)
+    .then( response => {
+      this.setState({
+        loggedInUserData: response.data,
+        messageData: response.data.messages
+      })
     })
-}
-
-componentDidMount = () => {
-    this.pushInState()
-}
+  }
 
 handleSubmit = (e) => {
     e.preventDefault();
-    axios.delete(`/dashboard/messages/delete/${this.props.userData._id}`, {
+    axios.post(`/dashboard/messages/delete/${this.state.loggedInUserData._id}`, {
         title: e.target[0].value,
     }).then( response => {
     if (response.data.type === 'error') {
         console.log("ERROR:", response.data.message)
-    } else {
-        console.log(response.data.message)
-    }
+      } else {
+        console.log(response.data)
+      }
     }).catch( err => {
       // This block catches rate limited errors
     console.log(err)
     })
-}
+    .then( response => {
+        this.grabUserData();
+    })
+  }
+
+  componentDidMount = () => {
+      this.grabUserData()
+  }
 
 render() {
     let mappedInbox = this.state.messageData.map((message, id) => {
