@@ -98,25 +98,36 @@ router.post('/messages/:id/', (req, res) => {
     });
 });
 
-router.post('/messages/update/:id', (req,res) => {
-    User.findByIdAndUpdate(req.params.id,
-        {$push : 
-            {messages : req.body}
-        }, {upsert: true}, function(err, user){
-        res.json(user);
-        console.log(user);
-        });
-});
+// // POST: a new message for any user
+// router.post('/messages/delete/:id/', (req, res) => {
+//     console.log(req.body)
+//     User.findById(req.params.id, (err, user) => {
+//         user.messages.pull({title: req.body.title});
+//         user.save((err, user) => {
+//             res.json(user);
+//             console.log(`posted a new message to user model`);
+//         });
+//     });
+// });
 
-router.delete('/messages/delete/:id', (req,res) => {
-    console.log(req.body);
-    // User.findByIdAndUpdate(req.params.id,
-    //     {$pull : 
-    //         {messages : { title: req.body.title}}
-    //     }, function(err, user){
-    //     res.json(user);
-    //     console.log(req.body);
-    //     });
+// router.post('/messages/update/:id', (req,res) => {
+//     User.findByIdAndUpdate(req.params.id,
+//         {$push : 
+//             {messages : req.body}
+//         }, {upsert: true}, function(err, user){
+//         res.json(user);
+//         console.log(user);
+//         });
+// });
+
+router.post('/messages/delete/:id/', (req,res) => {
+    User.findByIdAndUpdate(req.params.id,
+        {$pull : 
+            {messages : { title: req.body.title}}
+        }, function(err, user){
+        res.json(user);
+        console.log(req.body);
+        });
 });
  
 // // POST: a new message for any user
