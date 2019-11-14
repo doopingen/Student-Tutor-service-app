@@ -19,19 +19,19 @@ class userInbox extends React.Component {
     })
   }
 
-  handleSubmit = (e) => {
+handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`/dashboard/messages/delete/${this.state.loggedInUserData._id}`, {
         title: e.target[0].value,
     }).then( response => {
-      if (response.data.type === 'error') {
+    if (response.data.type === 'error') {
         console.log("ERROR:", response.data.message)
       } else {
         console.log(response.data)
       }
     }).catch( err => {
       // This block catches rate limited errors
-      console.log(err)
+    console.log(err)
     })
     .then( response => {
         this.grabUserData();
@@ -42,7 +42,7 @@ class userInbox extends React.Component {
       this.grabUserData()
   }
 
-  render() {
+render() {
     let mappedInbox = this.state.messageData.map((message, id) => {
         return (
             <tr id={message.title}>

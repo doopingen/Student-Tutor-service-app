@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MessageWidget from './MessageWidget';
+import TutorWidget from './TutorWidget';
 
 class DashboardMain extends React.Component {
 
@@ -25,14 +27,7 @@ class DashboardMain extends React.Component {
                 <div className="row">
                     <div className="col s6">
                         {/* this is the My Tutor div */}
-                        <h3 className="tutor-title">My Tutors</h3>
-                        <div>
-                            {/* <Avatar src={tutor.img} size="25" round={true} /> */}
-                            <p className="tutor-row">Tutor placeholder</p>
-                            <form>
-                                <input type="submit" value="Message!" />
-                                <input type="submit" value="Delete" />
-                            </form>
+                        <TutorWidget />
                         </div>
                     </div>
                     <div className="col s6">
@@ -45,7 +40,6 @@ class DashboardMain extends React.Component {
                         </form>
                     </div>
                 </div>
-            </div>
         )
     }
 }
