@@ -1,14 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import DashboardHeader from './DashboardHeader'
-import DashboardMain from './DashboardMain'
-import Subjects from './Subjects'
-import EditProfile from './EditProfile'
-import TutorWidget from './TutorWidget'
-import MessageWidget from './MessageWidget'
-import Tutors from './Tutors'
-import Message from './Message'
-import Avatar from 'react-avatar';
+import DashboardHeader from './DashboardHeader';
+import DashboardMain from './DashboardMain';
+import Subjects from './Subjects';
+import EditProfile from './EditProfile';
+import Tutors from './Tutors';
+import Message from './Message';
+import Inbox from './Inbox';
 import {
   BrowserRouter as Router,
   Route,
@@ -69,6 +67,7 @@ class Dashboard extends React.Component {
           <Route path='/dashboard/pickatutor' render={(props) => <Tutors {...props} level={this.state.level} subject={this.state.subject} tutor={this.state.tutor} userData={this.state.userData} handleTutorOnClick={this.handleTutorOnClick}/>}/>
           <Route path='/dashboard/message' render={(props) => <Message {...props} level={this.state.level} subject={this.state.subject} tutor={this.state.tutor} tutorid={this.state.tutorid} userData={this.state.userData} />}/>
           <Route path='/editprofile' render={(props) => <EditProfile {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
+          <Route path='/dashboard/inbox' render={(props) => <Inbox {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData}/>}/>
         </Router>
       </>
     )

@@ -32,7 +32,12 @@ class DashboardMain extends React.Component {
                     </div>
                     <div className="col s6">
                         {/* this is the Meassage component div */}
-                        <MessageWidget />
+                        <h3 className="tutor-title">Messages</h3>
+                        <p className="message-row">Placeholder</p>
+                        <Link to="/dashboard/inbox">Go to Inbox</Link>
+                        <form className="message-button">
+                            <input type="submit" value="Message" />
+                        </form>
                     </div>
                 </div>
         )
