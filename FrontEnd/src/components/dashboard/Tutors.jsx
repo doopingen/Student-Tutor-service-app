@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Avatar from 'react-avatar';
 import { Link } from 'react-router-dom';
 
 class Tutors extends React.Component {
@@ -26,7 +27,7 @@ class Tutors extends React.Component {
       if (this.props.subject === tutor.subject) {
         return (
             <li key={id}>
-                <h3>{tutor.name}</h3>
+                <h3> <Avatar name={tutor.name} size="75" round={true} /> {tutor.name}</h3>
                 <h5>{tutor.subject}</h5>
                 <h5>{tutor.bio}</h5>
                 <Link id={id} to="/dashboard/message" id={tutor._id} name={tutor.name} onClick={this.props.handleTutorOnClick}>Message!</Link>
