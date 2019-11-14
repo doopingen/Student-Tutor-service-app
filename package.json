@@ -25,6 +25,7 @@
     "express-jwt": "^5.3.1",
     "helmet": "^3.21.2",
     "jsonwebtoken": "^8.5.1",
+    "mapbox-gl": "^1.5.0",
     "mongoose": "^5.7.8"
   }
 }

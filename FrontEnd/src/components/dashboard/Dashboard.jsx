@@ -7,6 +7,7 @@ import EditProfile from './EditProfile';
 import Tutors from './Tutors';
 import Message from './Message';
 import Inbox from './Inbox';
+import Map from './Map';
 import {
   BrowserRouter as Router,
   Route,
@@ -68,6 +69,7 @@ class Dashboard extends React.Component {
           <Route path='/dashboard/message' render={(props) => <Message {...props} level={this.state.level} subject={this.state.subject} tutor={this.state.tutor} tutorid={this.state.tutorid} userData={this.state.userData} />}/>
           <Route path='/editprofile' render={(props) => <EditProfile {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
           <Route path='/dashboard/inbox' render={(props) => <Inbox {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData}/>}/>
+          <Route path='/dashboard/map' render={(props) => <Map {...props} userData={this.state.userData}/>} />
         </Router>
       </>
     )

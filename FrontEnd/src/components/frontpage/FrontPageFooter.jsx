@@ -9,26 +9,27 @@ const frontPageFooter = () => {
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">Step 1</i></h2>
-                            <h5 class="center">Find a Tutor</h5>
-                
-                            <p class="light">Ugh iceland migas hexagon meditation pabst master cleanse affogato marfa craft beer fingerstache pop-up listicle seitan heirloom. Flannel art party yr activated charcoal four loko hoodie cliche chicharrones. Truffaut tacos authentic, XOXO ramps photo booth 3 wolf moon skateboard cold-pressed irony marfa. Put a bird on it post-ironic next level chia.</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">Step 2</i></h2>
+                            <h2 class="center light-blue-text"><i class="material-icons">view_carousel</i></h2>
                             <h5 class="center">Select a Subject</h5>
                 
-                            <p class="light">Ugh iceland migas hexagon meditation pabst master cleanse affogato marfa craft beer fingerstache pop-up listicle seitan heirloom. Flannel art party yr activated charcoal four loko hoodie cliche chicharrones. Truffaut tacos authentic, XOXO ramps photo booth 3 wolf moon skateboard cold-pressed irony marfa. Put a bird on it post-ironic next level chia.</p>
+                            <p class="light">Our App allows you to choose specific subjects that your struggling in and connect to a qualified tutor, all you have to do to start your journey is select a subject your interested in.</p>
                         </div>
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">Step 3</i></h2>
+                            <h2 class="center light-blue-text"><i class="material-icons">storage</i></h2>
+                            <h5 class="center">Find a Tutor</h5>
+                
+                            <p class="light">Once you've found a subject your interested in, just hit the add button! You'll be able to choose a tutor from our list of qualified tutors.</p>
+
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">chat</i></h2>
                             <h5 class="center">Make an appointment</h5>
                 
-                            <p class="light">Ugh iceland migas hexagon meditation pabst master cleanse affogato marfa craft beer fingerstache pop-up listicle seitan heirloom. Flannel art party yr activated charcoal four loko hoodie cliche chicharrones. Truffaut tacos authentic, XOXO ramps photo booth 3 wolf moon skateboard cold-pressed irony marfa. Put a bird on it post-ironic next level chia.</p>
+                            <p class="light">Our messaging system will allow you to contact that tutor right away, setting up appointments or even just asking questions will be as easy as hitting the send button.</p>
                         </div>
                     </div>
                 </div>

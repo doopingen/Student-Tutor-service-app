@@ -224,18 +224,68 @@ var newSubjects = [
   }
 ];
 
-var newTutor = new User({
-  name: 'Steve',
+var newTutors = [
+  {
+    name: 'Steve Peters',
   email: 'steve@ga.co',
   password: 'password',
   role: 'tutor',
   rating: '5',
-  bio: 'Vegan yr master cleanse ennui, ramps man bun messenger bag art party four dollar toast pickled taxidermy DIY narwhal mixtape jianbing. Mlkshk letterpress helvetica adaptogen flexitarian VHS marfa chambray paleo organic pok pok gastropub offal.',
+  bio: 'My names Steve, I’ve been tutoring for close to 15 years,  helping students gain a better understanding of Language Arts. From writing conventions to essay preparation, I enjoy teaching it all, so message me if your looking for help!',
   subject: 'Language Arts',
-});
+  },
+  {
+    name: 'Sarah B',
+  email: 'sarah@ga.co',
+  password: 'password',
+  role: 'tutor',
+  rating: '5',
+  bio: `My names Sarah, and if you need help with math,  im the best! I've been tutoring for 4 years now, and while math can be confusing and challenging; I'll make sure to help you every step of the way to gain a better understanding. Message me!`,
+  subject: 'Math'
+  },
+  {
+    name: 'Gavin C',
+  email: 'gavin@ga.co',
+  password: 'password',
+  role: 'tutor',
+  rating: '1',
+  bio: `Mah names Gavin, if ye huvin a wee bit trauchle with ye English, then ah wud love tae teach yuh English ina proper way. Ah've been tutorin students in english noo fer 3 years, teaching subjects fae grammer tae vocabulary, sae message me if ye need help!`,
+  subject: 'English'
+  },
+  {
+    name: 'Kelsie M',
+  email: 'kelsie@ga.co',
+  password: 'password',
+  role: 'tutor',
+  rating: '4',
+  bio: `Hi, i'm Kelsie, I've been tutoring students in science for 6 months. I really enjoy helping students understand subjects like biology, and chemistry; So message if me if you need help!`,
+  subject: 'Science'
+  },
+  {
+    name: 'Garret T',
+  email: 'garret@ga.co',
+  password: 'password',
+  role: 'tutor',
+  rating: '4',
+  bio: `Hello, I'm Garret, I've been tutoring students in History for 2 years. If you need help with any subject in history, feel free to message me at any time!`,
+  subject: 'History'
+  },
+  {
+    name: 'Chelsea H',
+  email: 'chelsea@ga.co',
+  password: 'password',
+  role: 'tutor',
+  rating: '5',
+  bio: `Hi! I'm Chelsea! I help students who have a hard time understanding writing conventions for essays, but dont worry; I can also help you in other parts of the Language Arts curriculum! Message me!`,
+  subject: 'Language Arts'
+  }
+];
 
-// newTutor.save(function(err) {
-//   if (err) return console.log(err)
+
+
+// User.collection.insert(newTutors, function (err, docs) {
+//   if (err) return console.log(err);
+//   console.log(newTutors, 'Tutors Created!');
 // });
 
 // Subject.collection.insert(newSubjects, function (err, docs) {

@@ -23,3 +23,13 @@
   padding-top:10px;
   padding-bottom:10px
 }
+
+.mapContainer {
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
