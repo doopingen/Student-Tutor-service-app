@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MessageWidget from './MessageWidget';
-import TutorWidget from './TutorWidget';
 
 class DashboardMain extends React.Component {
 
@@ -46,8 +44,9 @@ class DashboardMain extends React.Component {
                         <form className="message-button">
                             <input type="submit" value="Message" />
                         </form>
-                  </div>
+                    </div>
                 </div>
+            </div>    
         )
     }
 }
