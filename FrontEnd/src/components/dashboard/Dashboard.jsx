@@ -63,8 +63,8 @@ class Dashboard extends React.Component {
     return (
       <>
         <Router>
-          <DashboardHeader />
-          <Route path='/dashboard/main' render={(props) => <DashboardMain {...props} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
+          <DashboardHeader logout={this.props.logout} />
+          <Route path='/dashboard/main' render={(props) => <DashboardMain {...props} subject={this.state.subject} level={this.state.level} levelAdd={this.handleLevelOnClick} userData={this.state.userData} lockedResult={this.props.lockedResult} handleClick={this.props.handleClick} logout={this.props.logout}/>}/>
           <Route path='/dashboard/pickasubject' render={(props) => <Subjects {...props} level={this.state.level} userData={this.state.userData} handleSubjectOnClick={this.handleSubjectOnClick}/>}/>
           <Route path='/dashboard/pickatutor' render={(props) => <Tutors {...props} level={this.state.level} subject={this.state.subject} tutor={this.state.tutor} userData={this.state.userData} handleTutorOnClick={this.handleTutorOnClick}/>}/>
           <Route path='/dashboard/message' render={(props) => <Message {...props} level={this.state.level} subject={this.state.subject} tutor={this.state.tutor} tutorid={this.state.tutorid} userData={this.state.userData} />}/>

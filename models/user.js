@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
   avatar: String,
   role: String,
   bio: String,
-  rating: String,
+  url: String,
   level: String,
   subject: String,
   messages: [messageSchema],

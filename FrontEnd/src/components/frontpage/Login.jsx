@@ -40,7 +40,7 @@ class Login extends React.Component {
         <form className="col s12" onSubmit={this.handleSubmit}>
           <input className="input-field col s12" type="text" placeholder="Email address" name="email" onChange={this.handleChange} value={this.state.email} /><br />
           <input className="input-field col s12" type="password" placeholder="Password" name="password" onChange={this.handleChange} value={this.state.password} /><br />
-          <input className="input-field col s12" type="submit" value="Log In!" />
+          <input className="waves-effect waves-light btn-large cta-white" type="submit" value="Log In!" />
         </form>
       </div>
     )

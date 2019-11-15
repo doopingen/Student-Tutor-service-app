@@ -22,19 +22,20 @@ class TutorWidget extends React.Component {
     }
 
     render() { 
-  
+
         return (
             <>
-                {/* this is the My Tutor div */}
-                <h3 className="tutor-title">My Tutors</h3>
-                <div>
-                    {/* <Avatar src={tutor.img} size="25" round={true} /> */}
-                    <p className="tutor-row">Tutor placeholder</p>
-                    <form>
-                        <input type="submit" value="Message!" />
-                        <input type="submit" value="Delete" />
-                    </form>
-                    <Link to="/dashboard/map" name="map">Map</Link>
+                <h5>Your Primary Tutor</h5>
+                <div className="card">
+                    <div className="card-image waves-effect waves-block waves-light">
+                    <img className="activator" src="http://unit3.darland.info/img/user-bg.jpg" alt="user background" />
+                    <img className="tutor-avatar responsive-img" src="http://demo.geekslabs.com/materialize/v2.1/layout03/images/avatar.jpg" alt="" />
+                    </div>        
+                    <div className="card-content"> 
+                        <span className="card-title grey-text text-darken-4">{this.state.loggedInUserData.tutor}</span>
+                        <p><i className="mdi-action-perm-identity cyan-text text-darken-2"></i> {this.state.loggedInUserData.level}</p>
+                        <p><i className="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> {this.state.loggedInUserData.subject}</p>
+                    </div>
                 </div>
             </>    
         )
