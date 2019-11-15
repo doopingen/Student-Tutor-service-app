@@ -57,7 +57,7 @@ render() {
                     </form>
                 </td>
                 <td>
-                    <Link id={id} to="/dashboard/message" id={message.recipientId} name={message.senderName} onClick={this.props.handleTutorOnClick}>Reply</Link>
+                    <Link id={id} to="/dashboard/reply" id={message.recipientId} name={message.senderName} onClick={this.props.handleTutorOnClick}>Reply</Link>
                 </td>    
             </tr>
         )
