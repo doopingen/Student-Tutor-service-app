@@ -226,7 +226,6 @@ var newSubjects = [
 
 var newTutors = [
   {
-  id: '5dcdc143532a5e2a465f625a',
   name: 'Derp Derpington',
   email: 'derp@ga.co',
   role: 'tutor',
@@ -281,10 +280,10 @@ var newTutors = [
   }
 ];
 
-User.collection.insert(newTutors, function (err, docs) {
-  if (err) return console.log(err);
-  console.log(newTutors, 'Tutors Created!');
-});
+// User.collection.insert(newTutors, function (err, docs) {
+//   if (err) return console.log(err);
+//   console.log(newTutors, 'Tutors Created!');
+// });
 
 // Subject.collection.insert(newSubjects, function (err, docs) {
 //   if (err) return console.log(err);

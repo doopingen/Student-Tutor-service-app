@@ -12,7 +12,7 @@ const frontPage = (props) => {
             <div class="container">
                 <div class="row center">
                     <div class="col">
-                        <h1 class="header center orange-text">Welcome!</h1>
+                        <h1 class="header center grey-text darken-3">Welcome!</h1>
                         <h5 class="header col s12 light">Start your journey to a better understanding here</h5>
                         <Modal />
                     </div>

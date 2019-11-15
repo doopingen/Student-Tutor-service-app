@@ -5,7 +5,7 @@ import {
 
 const frontPageHeader = () => {
     return(
-        <nav class="light-blue lighten-1" role="navigation">
+        <nav class="homepage-nav" role="navigation">
             <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Stuter</a>
             <ul class="right hide-on-med-and-down">
                 <li><Link to="/">Home</Link></li>

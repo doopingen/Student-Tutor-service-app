@@ -45,7 +45,7 @@ class Signup extends React.Component {
           <input type="text" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email} /><br />
           <input type="password" name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} /><br />
           <input type="text" name="role" placeholder="Role" onChange={this.handleChange} value={this.state.role} /><br />
-          <input type="submit" value="Sign Up!" />
+          <input class="waves-effect waves-light btn" type="submit" value="Sign Up!" />
         </form>
       </div>
     )

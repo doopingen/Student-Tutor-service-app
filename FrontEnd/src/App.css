@@ -1,10 +1,31 @@
+.homepage-nav {
+  background-color: #550000!important;
+}
+
+.homepage-footer {
+  background-color: #d46a6a
+}
+
+.homepage-footer-light {
+  background-color: #ffaaaa
+}
+
+.icon-fp {
+  font-size: 6vh;
+  color: #550000
+}
+
+.waves-button-input {
+  color: #fff!important;
+}
+
 .sidenav-style {
   width:200px;
   background-color: #e1e1e1;
 }
 
 .sidebar-active {
-  padding-left:200px;
+  padding-left:0px;
 }
 
 .dashboard-bkgrd {
@@ -32,4 +53,83 @@
   right: 0;
   left: 0;
   bottom: 0;
+}
+
+.tutor-avatar {
+  position:absolute!important;
+  max-width: 60%!important;
+  top: .5vw!important;
+  border-radius: 50%!important;
+  left: 20%!important;
+}
+
+.user-profile-img {
+  border-radius:50%!important;
+  height: 100px!important;
+  width: 100px!important;
+  top: 25px!important;
+  left: 10px!important;
+}
+
+.level-margin {
+  margin-right:15px;
+  margin-top:10px;
+}
+
+.level-p {
+  margin-bottom:6px;
+}
+
+.user-margin-6 {
+  margin-bottom:6px;
+}
+
+.inline {
+  display:inline-block
+}
+
+.subject-cat {
+  padding: 3px 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+
+.subject-title {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.tutor-bio {
+  font-size: 1.2rem;
+  padding-top: 10px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.spacer {
+  padding-left:10px;
+  padding-right:10px
+}
+
+.btn-large {
+  background-color: #550000!important
+}
+
+.btn {
+  background-color: #550000!important
+}
+
+.topnav-style {
+  background-color: #801515!important
+}
+
+.darken-4 {
+  background-color: #801515!important
 }

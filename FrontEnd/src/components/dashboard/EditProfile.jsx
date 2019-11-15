@@ -7,6 +7,7 @@ class EditProfile extends React.Component {
         name: '',
         email: '',
         bio: '',
+        url: '',
     }
 
     componentDidMount = () => {
@@ -17,7 +18,8 @@ class EditProfile extends React.Component {
         this.setState({
             name: this.props.userData.name,
             email: this.props.userData.email,
-            bio: this.props.userData.bio
+            bio: this.props.userData.bio,
+            url: this.props.userData.url
         })
     }
 
@@ -32,7 +34,8 @@ class EditProfile extends React.Component {
         axios.put(`/dashboard/${this.props.userData._id}`, {
             name: this.state.name,
             email: this.state.email,
-            bio: this.state.bio
+            bio: this.state.bio,
+            url: this.state.url
         }).then( response => {
             if (response.data.type === 'error') {
               console.log("ERROR:", response.data.message)
@@ -53,12 +56,10 @@ class EditProfile extends React.Component {
                         <input type="text" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name}/><br />
                         <input type="text" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email}/><br />
                         <input type="text" name="bio" placeholder="Bio" onChange={this.handleChange} value={this.state.bio}/>
+                        <input type="text" name="url" placeholder="URL" onChange={this.handleChange} value={this.state.url}/>
                     </div>
                     <div className="row">
-                        <input name="file" type="file" class="file-upload" data-cloudinary-field="image_id" data-form-data="{ 'transformation': {'crop':'limit','tags':'samples','width':3000,'height':2000}}" onChange={this.handleChange}/>
-                    </div>
-                    <div className="row">
-                        <input type="submit" value="SAVE" />
+                        <input class="waves-effect waves-light btn" type="submit" value="SAVE" />
                     </div>
                 </form> 
             </div>

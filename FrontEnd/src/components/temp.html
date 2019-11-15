@@ -1,0 +1,104 @@
+<div class="container"><div class="row-1"><div class="col-1-2"><h1 class="welcome-row">Welcome to Stutor! </h1><p>Hello</p><button>Test the protected route</button><button>LOGOUT</button><br><p></p></div><div class="col-1-2"><h3 class="school-row">Pick a School Level</h3><form class="button-row"><input type="submit" value="Elementryschool"><input type="submit" value="Middleschool"><input type="submit" value="Highschool"></form></div></div><div class="row-2"><div class="col-1"><h3 class="tutor-title">My Tutors</h3><div><p class="tutor-row">Tutuor placeholder</p><form><input type="submit" value="Message!"><input type="submit" value="Delete"></form></div></div><div class="col-2"><h3 class="message-title">Messages</h3><p class="message-row">Placeholder</p><form class="message-button"><input type="submit" value="Message"></form></div></div></div>
+
+
+
+
+
+<div class="row"><div class="col s6">
+    <h5>Your Primary Tutor</h5>
+              <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="http://demo.geekslabs.com/materialize/v2.1/layout03/images/user-bg.jpg" alt="user background">
+    <img src="http://demo.geekslabs.com/materialize/v2.1/layout03/images/avatar.jpg" alt="" class="responsive-img" style="position:absolute;max-width: 60%;top: .5vw;border-radius: 50%;left: 20%;z-index: 2;">
+                  </div>
+                  <div class="card-content">
+                  
+                  
+                  <span class="card-title grey-text text-darken-4">Roger Waters</span>
+                  <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                  <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                  <p><i class="mdi-communication-email cyan-text text-darken-2"></i> mail@domain.com</p>
+                  </div>
+                  
+              </div>
+              </div><div class="col s6">
+    <h5>Your Messages</h5>
+              <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="http://demo.geekslabs.com/materialize/v2.1/layout03/images/user-bg.jpg" alt="user background">
+  
+      
+                  </div>
+                  <div class="card-content">
+                  
+                  
+                  <span class="card-title grey-text text-darken-4">You have 5 messages</span>
+                  <p style="margin-bottom:6px;"><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                        
+        <a class="waves-effect waves-light btn"><i class="material-icons left"></i>Open</a>
+        
+                  
+                  </div>
+                  
+              </div>
+              </div>
+  
+  </div>
+
+
+
+  <div class="row">
+    <div class="card">
+                    
+                    <div class="card-content">
+                    
+                    
+                    <span class="center card-title grey-text text-darken-4">Choose your education level</span>
+                    <p class="center" style="margin-bottom:6px;"> To get started, please choose from one of the following options</p>
+      <div class="row center">
+                          
+          <a class="waves-effect waves-light btn-large" style="margin-right:15px;margin-top:10px"><i class="material-icons left"></i>Elementary School</a><a class="waves-effect waves-light btn-large" style="margin-right:15px;margin-top:10px"><i class="material-icons left"></i>Middle School</a><a class="waves-effect waves-light btn-large" style="margin-right:15px;margin-top:10px"><i class="material-icons left"></i>High School</a> </div>
+                    
+                    </div>
+                    
+                </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col m6 s12">
+        <div class="card red darken-4 darken-1" style="height:225px;">
+      
+      <div class="card-content white-text">
+      <span class="card-title">My Education Needs</span>
+      
+      </div>
+      <div class="card-action white-text">
+        <h6>High School</h6><h6>Math</h6>
+      
+      </div>
+      </div>
+        </div>
+        <div class="col s12 m6">
+      <div class="card red darken-4 horizontal" style="height:225px;">
+      <div class="card-image">
+      <img style="border-radius:50%;height: 100px;width: 100px;top: 25px;left: 10px;" src={this.props.userData.url}>
+      
+      </div>
+      <div class="card-stacked">
+      <div class="card-content white-text">
+        <span class="card-title">My Profile</span>
+      <p>I am a very simple card. I am good at containing small bits of information.</p>
+      </div>
+      <div class="card-action">
+      <a href="#">Edit Profile</a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <button onClick={this.props.logout}>LOGOUT</button><br />
+
+      src={this.props.userData.url}

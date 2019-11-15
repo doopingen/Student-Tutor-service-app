@@ -53,38 +53,51 @@ render() {
                 <td>
                     <form onSubmit={this.handleSubmit}>
                         <input type="hidden" name="title" value={message.title} />
-                        <input type="submit" value="Delete" />
+                        <input class="waves-effect waves-light btn" type="submit" value="Delete" />
                     </form>
                 </td>
                 <td>
-                    <Link id={id} to="/dashboard/message" id={message.recipientId} name={message.senderName} onClick={this.props.handleTutorOnClick}>Reply</Link>
+                    <Link className="waves-effect waves-light btn" id={id} to="/dashboard/reply" id={message.recipientId} name={message.senderName} onClick={this.props.handleTutorOnClick}>Reply</Link>
                 </td>    
             </tr>
         )
     })
     return (
         <div className="container sidebar-active dashboard-bkgrd">
-            <div className="row">
-                <div className="col s6">
-                    <h3>My Level</h3>
-                    <h5>{this.props.level}</h5>
-                </div>
-                <div className="col s6">
-                    <h3>My Info</h3>
-                    <h5>{this.props.userData.name}</h5>
-                    <h5>{this.props.userData.email}</h5>
+          <div className="row">
+            <div className="col m6 s12">
+                <div className="card red darken-4 darken-1" style={{height: '225px'}}>
+                    <div className="card-content white-text">
+                        <span className="card-title">My Education Needs</span>
+                    </div>
+                    <div className="card-action white-text">
+                        <h6 className="inline">{this.props.level}</h6><span className="spacer">|</span><h6 className="inline">{this.props.subject}</h6>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="admin" class="col s12">
-                    <div class="card material-table">
-                        <div class="table-header">
-                            <h5 class="table-title">Inbox</h5>
-                            <div class="actions">
-                            {/* <a href="#add_users" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">person_add</i></a> */}
-                            </div>
+            <div className="col s12 m6">
+                <div className="card red darken-4 horizontal" style={{height: '225px'}}>
+                    <div className="card-image">
+                        <img className="user-profile-img" src={this.props.userData.url} />
+                    </div>
+                    <div className="card-stacked">
+                        <div className="card-content white-text">
+                            <span className="card-title">My Profile</span>
+                                <p>{this.props.userData.name}</p>
+                                <p>{this.props.userData.email}</p>
                         </div>
-                        <table id="datatable">
+                        <div className="card-action">
+                            <Link to="/EditProfile" className="text-white">Edit Profile</Link>
+                        </div>
+                    </div>
+                  </div>    
+               </div>
+            </div>
+            <div class="row">
+                <div id="admin" className="col s12">
+                    <h5>Inbox</h5>
+                    <div className="card">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Sender</th>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import ModalonMessage from './ModalonMessage';
 import { Link } from 'react-router-dom';
 
-class Message extends React.Component {
+class MessageReply extends React.Component {
 
   state = {
     title: '',
@@ -38,19 +38,8 @@ class Message extends React.Component {
       if (response.data.type === 'error') {
         console.log("ERROR:", response.data.message)
       } else {
-        console.log("Successfuly posted message for recipient boss")
-      }
-    });
-    axios.put(`/dashboard/${this.props.userData._id}`, {
-      level: this.props.level,
-      subject: this.props.subject,
-      tutor: this.props.tutor
-    }).then( response => {
-      if (response.data.type === 'error') {
-        console.log("ERROR:", response.data.message)
-      } else {
         this.setState({
-          modal: true
+            modal: true
         });
       }
     })
@@ -102,7 +91,19 @@ class Message extends React.Component {
                     </div>
                 </div>    
             </div>
-        </div> 
+        </div>   
+        <div className="row">
+            <div className="col s6">
+                <h3>My Level</h3>
+                <h5>{this.props.level}</h5>
+                <h5>{this.props.subject}</h5>
+            </div>
+            <div className="col s6">
+                <h3>My Info</h3>
+                <h5>{this.props.userData.name}</h5>
+                <h5>{this.props.userData.email}</h5>
+            </div>
+        </div>
         <div className="row">
           <ModalonMessage trigger={this.state.modal}/>
           <form className="col s12" onSubmit={this.handleSubmit}>
@@ -135,5 +136,5 @@ class Message extends React.Component {
   }
 }
 
-export default Message;
+export default MessageReply;
 
